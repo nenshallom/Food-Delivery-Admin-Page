@@ -1,168 +1,166 @@
-.page {
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
+/* src/app/page.module.css */
 
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
-  align-items: center;
-  justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
-  font-family: var(--font-geist-sans);
-}
-
-@media (prefers-color-scheme: dark) {
-  .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-  }
-}
-
-.main {
+.dashboardHeaderArea {
   display: flex;
-  flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
+  justify-content: space-between; /* To push the filter container to the right */
+  align-items: flex-end; /* Align title block and filter block to the bottom */
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee; /* Light separator line */
 }
 
-.main ol {
-  font-family: var(--font-geist-mono);
-  padding-left: 0;
-  margin: 0;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  list-style-position: inside;
+.dashboardTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 5px 0; /* Removes default margin from the h2 element */
 }
 
-.main li:not(:last-of-type) {
-  margin-bottom: 8px;
+.dashboardWelcomeMessage {
+  font-size: 1rem;
+  color: #777;
+  margin: 0; /* Adds margin only to the top, keeping other margins zero */
 }
 
-.main code {
-  font-family: inherit;
-  background: var(--gray-alpha-100);
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-weight: 600;
+.filterPeriodContainer {
+  margin-left: auto; /* Pushes this container to the far right within its flex parent */
+  margin-top: 10px; /* Provides some top margin, especially if it wraps below the title */
 }
 
-.ctas {
-  display: flex;
-  gap: 16px;
-}
-
-.ctas a {
-  appearance: none;
-  border-radius: 128px;
-  height: 48px;
-  padding: 0 20px;
-  border: none;
-  border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
+.filterPeriodButton {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px; /* Rounded corners as per hh.png */
+  padding: 10px 15px; /* Adjust padding to match hh.png */
+  font-size: 0.95rem;
+  color: #555;
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  line-height: 20px;
+  gap: 8px; /* Space between elements within the button */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  transition: all 0.2s ease;
+}
+
+.filterPeriodeButton:hover {
+  border-color: #c4c4c4;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.filterPeriodIcon {
+  font-size: 1.1rem; /* Adjust icon size within the button */
+  color: #007bff;
+}
+
+.filterPeriodText { /* NEW: for 'Filter Period:' text */
+  color: #333;
   font-weight: 500;
 }
 
-a.primary {
-  background: var(--foreground);
-  color: var(--background);
-  gap: 8px;
+.filterPeriodDateRange { /* NEW: for the date range text */
+  color: #777;
+  font-weight: 400;
 }
 
-a.secondary {
-  border-color: var(--gray-alpha-200);
-  min-width: 158px;
+
+.filterPeriodDropdownArrow { /* Renamed from filterPeriodeDropdownArrow */
+  font-size: 1rem;
+  color: #888;
 }
 
-.footer {
-  grid-row-start: 3;
-  display: flex;
-  gap: 24px;
+.statsCardsGrid {
+  display: grid; /* Enables CSS Grid layout */
+  /* Creates a responsive grid: `auto-fit` tries to fit as many columns as possible,
+     each between `260px` and `1fr` (fractional unit of available space). */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px; /* Sets the spacing between grid items (the cards) */
+  margin-bottom: 30px; /* Adds space below the entire grid section */
 }
-
-.footer a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.footer img {
-  flex-shrink: 0;
-}
-
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
-
-  .footer a:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
+/* Add some basic responsiveness so they stack on smaller screens */
+@media (max-width: 1200px) {
+  .statsCardsGrid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
   }
 }
 
-@media (max-width: 600px) {
-  .page {
-    padding: 32px;
-    padding-bottom: 80px;
-  }
-
-  .main {
-    align-items: center;
-  }
-
-  .main ol {
-    text-align: center;
-  }
-
-  .ctas {
-    flex-direction: column;
-  }
-
-  .ctas a {
-    font-size: 14px;
-    height: 40px;
-    padding: 0 16px;
-  }
-
-  a.secondary {
-    min-width: auto;
-  }
-
-  .footer {
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+@media (max-width: 768px) {
+  .statsCardsGrid {
+    grid-template-columns: 1fr; /* 1 column on small screens */
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
+.chartsGrid {
+  display: grid;
+  /* Two columns, each taking equal fractional space */
+  grid-template-columns: repeat(2, 1fr); /* Adjusted for larger chart placeholders */
+  gap: 30px;
+  margin-bottom: 30px; /* Space below the charts grid */
+}
+
+.secondaryChartsGrid {
+  display: grid;
+  /* Adjust minmax to provide more horizontal space for these charts as per Figma */
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 25px; /* Space between chart components */
+  margin-bottom: 40px; /* Space below this grid */
+}
+
+/* --- Media Queries for Page Content --- */
+
+/* Tablets (landscape) / Smaller Laptops */
+@media (max-width: 1200px) {
+  .statsCardsGrid {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns for stats cards */
+  }
+}
+
+/* Tablets (portrait) / Large Phones */
+@media (max-width: 768px) {
+  /* Header adjustments */
+  .dashboardHeaderArea {
+      flex-direction: column; /* Stack title/welcome and filter */
+      align-items: flex-start;
+      gap: 15px; /* Space between stacked elements */
+  }
+
+  .filterPeriodContainer {
+      width: 100%; /* Make filter button take full width */
+  }
+  .filterPeriodButton {
+      width: 100%;
+      justify-content: space-between; /* Distribute content within button */
+  }
+
+  /* Stats Cards */
+  .statsCardsGrid {
+      grid-template-columns: 1fr; /* 1 column for stats cards */
+      gap: 15px; /* Smaller gap */
+  }
+
+  /* Main Charts */
+  .chartsGrid {
+      grid-template-columns: 1fr; /* 1 column for pie and order chart */
+      gap: 25px; /* Smaller gap */
+  }
+
+  /* Secondary Charts */
+  .secondaryChartsGrid {
+      grid-template-columns: 1fr; /* 1 column for secondary charts */
+      gap: 25px; /* Smaller gap */
+  }
+}
+
+/* Small Phones */
+@media (max-width: 576px) {
+  /* Further adjustments if needed for very small screens */
+  .dashboardTitle {
+      font-size: 1.5rem;
+  }
+  .dashboardWelcomeMessage {
+      font-size: 0.85rem;
+  }
+  .filterPeriodButton {
+      padding: 8px 12px;
+      font-size: 0.85rem;
   }
 }

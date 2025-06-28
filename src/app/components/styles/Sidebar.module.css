@@ -1,0 +1,118 @@
+/* src/components/styles/Sidebar.module.css */
+
+/* Existing .sidebar styles... */
+.sidebar {
+  width: 200px; /* Adjusted from 250px to 220px */
+  background-color: #fff;
+  padding: 25px 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  z-index: 1000; 
+}
+
+/* Tablets (portrait) / Large Phones (Sidebar is hidden by layout.module.css at this breakpoint) */
+@media (max-width: 768px) {
+  .sideBar {
+      /* This rule makes sidebar full width if it were displayed in a column layout,
+         but layout.module.css will set display: none for the sidebar. */
+      width: 100%;
+      height: auto; /* Allow height to adjust */
+  }
+}
+
+/* Small Phones */
+@media (max-width: 576px) {
+  /* Further adjustments if needed for extremely small screens */
+}
+
+/* --- New Styles for Logo, Search, and Navigation --- */
+
+.logoSection {
+  text-align: center;
+  margin-bottom: 20px; /* Space below the logo section */
+}
+
+.logo {
+  font-size: 2rem; /* Larger font size for "Sedap." */
+  font-weight: bold;
+  color: #333;
+  margin: 0; /* Remove default margin for h1 */
+}
+
+.modernDashboard {
+  font-size: 0.8rem;
+  color: #777;
+  margin-top: 5px;
+}
+
+
+.nav {
+  /* The <nav> element itself */
+  flex-grow: 1; /* Allows nav to take up available vertical space, pushing bottom content down */
+  margin-top: 3rem;
+}
+
+.UlnavList {
+  list-style: none; /* Removes default bullet points from <ul> */
+}
+
+.navList {
+  list-style: none; /* Removes default bullet points from <ul> */
+  padding: 0; /* Removes default padding from <ul> */
+  margin: 0; /* Removes default margin from <ul> */
+}
+
+.navItem {
+  margin-bottom: 8px; /* Space between each navigation item */
+}
+
+.navLink {
+  display: flex; /* Make the link a flex container to align icon and text */
+  align-items: center; /* Vertically center icon and text */
+  padding: 10px 15px; /* Padding inside the link for click area */
+  text-decoration: none; /* Removes underline from links */
+  color: #555; /* Default text color */
+  font-weight: 500; /* Medium font weight */
+  border-radius: 8px; /* Slightly rounded corners for the link background */
+  transition: background-color 0.2s ease, color 0.2s ease; /* Smooth transition for hover effects */
+}
+
+.navLink:hover {
+  background-color: #e0e5ea; /* Background color on hover */
+  color: #333; /* Text color on hover */
+}
+
+/* Active state (for the currently selected dashboard item) */
+/* We will implement the logic for 'active' class later with Next.js Router */
+/* For now, this is just a placeholder style */
+.navLink.active {
+  background-color: #007bff; /* A prominent background color for active link */
+  color: #fff; /* White text for active link */
+}
+
+.navIcon {
+  margin-right: 10px; /* Space between the icon and the text */
+  font-size: 1.2rem; /* Adjust icon size */
+}
+
+.downloadAppSection {
+  text-align: center;
+  margin-top: auto; /* Pushes this section to the bottom */
+  padding-top: 20px;
+  border-top: 1px solid #e5e5e5; /* Separator line */
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.adminInfoSection {
+  text-align: center;
+  margin-top: 10px; /* Space above */
+  font-size: 0.75rem;
+  color: #999;
+}

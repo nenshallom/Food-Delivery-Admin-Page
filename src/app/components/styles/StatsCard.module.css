@@ -1,0 +1,83 @@
+/* src/components/styles/StatsCard.module.css */
+
+.statsCard {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 25px; /* Adjust padding to match the spacing in cc.png */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  display: flex; /* Use flexbox to arrange icon and content horizontally */
+  align-items: center; /* Vertically center items */
+  gap: 20px; /* Space between the icon circle and the text content */
+  flex-grow: 1; /* Allows cards to grow and fill available space within the grid */
+  min-width: 0; /* Ensures content can shrink within flex/grid */
+}
+
+.iconCircle {
+  width: 70px; /* Diameter of the circle */
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Using a light green from cc.png. If other cards have different colors,
+     you'd add dynamic classes or inline styles in StatsCard.tsx */
+  background-color: #eaf8e9;
+  flex-shrink: 0; /* Prevent it from shrinking */
+}
+
+/* Ensure the icons inside the circles are correctly sized and colored */
+/* These styles are applied directly to the icon components */
+.iconOrders { color: #4CAF50; font-size: 2.5rem; } /* Green example, adjust to match cc.png */
+.iconDelivered { color: #2196F3; font-size: 2.5rem; } /* Blue example */
+.iconCanceled { color: #F44336; font-size: 2.5rem; } /* Red example */
+.iconRevenue { color: #FFC107; font-size: 2.5rem; } /* Amber example */
+
+
+.cardContent {
+  display: flex;
+  flex-direction: column; /* Stack value, title, and trend vertically */
+  align-items: flex-start; /* Align text to the left within its column */
+}
+
+.cardValue {
+  font-size: 2.8rem; /* Large font size for the number */
+  font-weight: 700; /* Bold */
+  color: #333;
+  margin: 0; /* Remove default margins */
+  line-height: 1.1; /* Adjust line height for closer spacing */
+}
+
+.cardTitle {
+  font-size: 1.1rem; /* Smaller font for the title */
+  color: #666;
+  margin: 0; /* Remove default margins */
+  font-weight: 500;
+  white-space: nowrap; /* Keep title on a single line if possible */
+}
+
+.cardTrend {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9rem; /* Smaller font for the percentage */
+  font-weight: 500;
+  margin-top: 5px; /* Space between title and trend line */
+}
+
+.trendIcon {
+  font-size: 1rem;
+}
+
+.trendUp {
+  color: #4CAF50; /* Green for up trend */
+}
+
+.trendDown {
+  color: #F44336; /* Red for down trend */
+}
+
+/* Specific styling for the '4% (30 days)' text itself */
+.cardTrend span {
+  color: #888; /* A more muted color for the percentage text */
+  font-weight: 400;
+}

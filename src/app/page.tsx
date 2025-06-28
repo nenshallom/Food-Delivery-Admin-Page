@@ -1,95 +1,67 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+// src/app/page.tsx
+import React from 'react';
 
-export default function Home() {
+import StatsCard from './components/StatsCard/StatsCard';
+import PieChart from './components/PieChart/PieChart';
+import ChartOrder from './components/ChartOrder/ChartOrder';
+import TotalRevenueChart from './components/TotalRevenueChart/TotalRevenueChart';
+import CustomerMapChart from './components/CustomerMapChart/CustomerMapChart';
+import CustomerReview from './components/CustomerReview/CustomerReview';
+
+// Import statsData from the new data file
+import { statsData } from './data/statsData';
+
+import styles from './page.module.css';
+
+const Page = () => {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className={styles.dashboardLayout}>
+      {/* Assuming Sidebar and MainContent are managed by layout.tsx and you only return inner content */}
+      <div className={styles.dashboardPageContent}>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+        {/* Updated dashboardHeaderArea to match the design, including filter period */}
+        <div className={styles.dashboardHeaderArea}>
+          <h2 className={styles.dashboardTitle}>Dashboard</h2>
+          <p className={styles.dashboardWelcomeMessage}>Hi, Samantha. Welcome back to Sedap Admin!</p>
+
+          <div className={styles.filterPeriodContainer}> {/* Renamed class */}
+            <button className={styles.filterPeriodButton}> {/* Renamed class */}
+              <span className={styles.filterPeriodIcon}>🗓️</span> {/* Renamed class */}
+              <span className={styles.filterPeriodText}>Filter Period:</span> {/* NEW: Added span for 'Filter Period:' text */}
+              <span className={styles.filterPeriodDateRange}>17 April 2020 - 21 May 2020</span> {/* NEW: Added span for date range */}
+              <span className={styles.filterPeriodDropdownArrow}>⬇️</span> {/* Renamed class */}
+            </button>
+          </div>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        <div className={styles.statsCardsGrid}>
+          {statsData.map((stat) => (
+            <StatsCard
+              key={stat.id}
+              title={stat.title}
+              value={stat.value}
+              percentage={stat.percentage}
+              trend={stat.trend as 'up' | 'down'}
+              iconType={stat.iconType as 'orders' | 'delivered' | 'canceled' | 'revenue'}
+            />
+          ))}
+        </div>
+
+        <div className={styles.chartsGrid}>
+          <PieChart />
+          <ChartOrder />
+        </div>
+
+        <div className={styles.secondaryChartsGrid}>
+          <TotalRevenueChart />
+          <CustomerMapChart />
+        </div>
+
+        <CustomerReview />
+
+      </div>
     </div>
   );
-}
+};
+
+export default Page;

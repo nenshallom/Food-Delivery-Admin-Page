@@ -1,0 +1,99 @@
+/* src/components/styles/CustomerMapChart.module.css */
+
+.customerMapContainer {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.chartHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.chartHeader h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0;
+  font-weight: 600;
+}
+
+.chartControls {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between dropdown and icon */
+}
+
+.weeklyDropdown {
+  background-color: #f8f9fa; /* Light grey background */
+  border: 1px solid #dee2e6; /* Light border */
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  color: #555;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.weeklyDropdown:hover {
+  background-color: #e2e6ea;
+  border-color: #c4c4c4;
+}
+
+.dropdownIcon {
+  font-size: 1.1rem;
+}
+
+.moreOptionsIcon {
+    font-size: 1.2rem;
+    color: #888;
+    cursor: pointer;
+}
+
+.chartBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  min-height: 250px;
+}
+
+.placeholderChartArea {
+  width: 90%;
+  height: 180px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  border: 4px dashed #ddd;
+  margin-bottom: 15px;
+}
+
+.placeholderText {
+  color: #888;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.xAxisLabels {
+    display: flex;
+    justify-content: space-around; /* Distribute labels evenly with space around */
+    width: 90%; /* Match placeholder width */
+    font-size: 0.8rem;
+    color: #777;
+    margin-top: 10px;
+}
+
+.xAxisLabels span {
+    text-align: center;
+    flex-grow: 1; /* Allow labels to take equal space */
+}

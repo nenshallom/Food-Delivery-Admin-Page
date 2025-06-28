@@ -1,0 +1,176 @@
+/* src/components/styles/Header.module.css */
+
+.headerContainer {
+  display: flex;
+  /* justify-content: space-between; This will change as welcomeMessage is removed */
+  justify-content: flex-start; /* Align items to the start, then use margin/gap */
+  align-items: center;
+  padding: 20px 30px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 30px; /* Increased gap to push search bar and right section apart */
+}
+
+/* REMOVED: Left Section: Welcome Message styles */
+/* .welcomeMessage h1 {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0;
+  font-weight: 600;
+} */
+
+/* Middle Section: Search Bar (now often the leftmost primary element) */
+.headerSearch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  padding: 8px 15px;
+  border: 1px solid #eee;
+  flex-grow: 1; /* Allows search bar to take available space */
+  max-width: 400px; /* Adjusted max-width, adjust as per visual preference */
+  margin-right: auto; /* Pushes the search bar to the left if there's extra space */
+}
+
+.headerSearchInput {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: 0.95rem;
+  color: #333;
+  outline: none;
+  padding-right: 25px;
+}
+
+.headerSearchInput::placeholder {
+  color: #bbb;
+}
+
+.headerSearchIcon {
+  position: absolute;
+  right: 15px;
+  color: #999;
+  font-size: 1.1rem;
+}
+
+/* Right Section: Icons and User Info */
+.headerRightSection {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Space between icon stack and user info */
+  margin-left: auto; /* Pushes this section to the far right */
+}
+
+.iconStack {
+  display: flex;
+  flex-direction: row; /* Stack icons vertically */
+  gap: 20px; /* Space between stacked icons */
+}
+
+.iconWrapper {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-color: #e0e6f7;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.iconWrapper:hover {
+  background-color: #cdd5e8;
+}
+
+.headerIcon {
+  font-size: 1.3rem;
+  color: #007bff;
+}
+
+/* Badges */
+.badgeNotification, .badgeChat, .badgeCart, .badgeSettings {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #ff4d4f;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: 50%;
+  padding: 3px 6px;
+  min-width: 20px;
+  text-align: center;
+  line-height: 1;
+  border: 2px solid #fff;
+}
+
+.badgeNotification { background-color: #007bff; }
+.badgeChat { background-color: #00bcd4; }
+.badgeCart { background-color: #8bc34a; }
+.badgeSettings { background-color: #ff9800; }
+
+/* User Info */
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 20px; /* Add padding to the left for separation */
+  border-left: 1px solid #eee; /* Faint separator line */
+}
+
+.userName {
+  font-size: 0.95rem;
+  color: #333;
+  font-weight: 500;
+  margin: 0;
+}
+
+.userAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Basic responsiveness for header */
+@media (max-width: 768px) {
+  .headerContainer {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 15px 20px;
+      gap: 15px;
+  }
+
+  /* .welcomeMessage h1 {
+      font-size: 1rem;
+  } */ /* Removed with welcomeMessage */
+
+  .headerSearch {
+      width: 100%;
+      max-width: unset;
+      margin-right: 0; /* Remove auto margin on smaller screens */
+  }
+
+  .headerRightSection {
+      width: 100%;
+      justify-content: space-between;
+      margin-left: 0; /* Remove auto margin on smaller screens */
+  }
+
+  .iconStack {
+      flex-direction: row;
+      gap: 15px;
+  }
+
+  .userInfo {
+      padding-left: 0; /* Remove padding */
+      border-left: none; /* Remove border on small screens if desired */
+  }
+}

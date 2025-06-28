@@ -1,0 +1,110 @@
+/* src/components/styles/ChartOrder.module.css */
+
+.chartOrderContainer {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px; /* Slightly reduced padding */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  height: 380px; /* Set a consistent height matching PieChart */
+  overflow: hidden; /* Hide anything that overflows */
+}
+
+.chartHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px; /* Reduced margin */
+  padding-bottom: 10px; /* Reduced padding */
+  border-bottom: 1px solid #eee;
+}
+
+.chartTitle {
+  font-size: 1.1rem; /* Slightly reduced font size */
+  color: #333;
+  font-weight: 600;
+  margin: 0 0 5px 0;
+}
+
+.chartDescription {
+  font-size: 0.85rem; /* Slightly reduced font size */
+  color: #777;
+  margin: 0;
+}
+
+.saveReportButton {
+  background-color: #fff;
+  border: 1px solid #007bff;
+  color: #007bff;
+  border-radius: 8px;
+  padding: 8px 12px; /* Slightly reduced padding */
+  font-size: 0.85rem; /* Slightly reduced font size */
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px; /* Reduced gap */
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.saveReportButton:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.downloadIcon {
+  font-size: 1.1rem; /* Slightly reduced icon size */
+}
+
+.chartArea {
+  position: relative;
+  width: 100%;
+  flex-grow: 1; /* Allow chart area to take available height */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 15px; /* Reduced padding */
+  overflow: hidden;
+}
+
+.chartSvg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 25px); /* Adjusted height to leave space for labels below */
+}
+
+.chartLabels {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  font-size: 0.8rem; /* Reduced font size */
+  color: #777;
+  margin-top: 8px; /* Reduced margin */
+}
+
+.chartLabels span {
+  flex: 1;
+  text-align: center;
+}
+
+/* Tooltip placeholder styling - adjust positioning if needed after scaling */
+.chartTooltip {
+  /* Keep existing styles, but visually verify positioning after scaling */
+  /* You might need to fine-tune `top` and `left` percentages relative to the new `chartSvg` height/width */
+  font-size: 0.8rem; /* Reduced font size */
+  padding: 6px 10px; /* Reduced padding */
+}
+
+.tooltipValue {
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.tooltipDate {
+  font-size: 0.7rem; /* Reduced font size */
+  color: #bbb;
+}
