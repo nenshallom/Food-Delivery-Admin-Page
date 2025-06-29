@@ -1,4 +1,3 @@
-// src/components/Header/Header.tsx
 "use client";
 
 import React from 'react';
@@ -16,12 +15,7 @@ const Header = () => {
 
     return (
         <header className={styles.headerContainer}>
-            {/* REMOVED: Left Section: Welcome Message, as per new instruction */}
-            {/* <div className={styles.welcomeMessage}>
-                <h1>Hi, {userName}. Welcome back to Sedap Admin!</h1>
-            </div> */}
 
-            {/* Left/Middle Section: Search Bar (now the leftmost primary element) */}
             <div className={styles.headerSearch}>
                 <input type="text" placeholder="Search here..." className={styles.headerSearchInput} />
                 <FiSearch className={styles.headerSearchIcon} />
@@ -52,7 +46,6 @@ const Header = () => {
                     </div>
                 </div>
 
-                {/* User Info (with separator line implemented in CSS) */}
                 <div className={styles.userInfo}>
                     <p className={styles.userName}>Hello, {userName}</p>
                     <Image

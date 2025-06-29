@@ -1,4 +1,3 @@
-
 .customerReviewContainer {
   background-color: #fff;
   border-radius: 16px;
@@ -6,7 +5,7 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
-  margin-top: 30px; /* Provides space below the charts */
+  margin-top: 30px;
 }
 
 .reviewHeader {
@@ -37,50 +36,46 @@
 }
 
 .navigationArrows {
-    display: flex;
-    gap: 8px;
+  display: flex;
+  gap: 8px;
 }
 
 .navArrowButton {
-    background-color: #f0f0f0;
-    border: 1px solid #ddd;
-    border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    color: #888;
-    cursor: pointer;
-    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  color: #888;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 .navArrowButton:hover {
-    background-color: #e2e2e2;
-    border-color: #ccc;
-    color: #555;
+  background-color: #e2e2e2;
+  border-color: #ccc;
+  color: #555;
 }
 
-/* Review List Section - Carousel Specific Styles */
 .reviewList {
-  /* CHANGED: From grid to flex for horizontal scrolling */
   display: flex;
-  /* NEW: Allow horizontal overflow and hide scrollbar */
-  overflow-x: scroll; /* Enable horizontal scrolling */
+  overflow-x: scroll;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none;  /* IE and Edge */
-  scroll-behavior: smooth; /* Smooth scrolling animation */
-  scroll-snap-type: x mandatory; /* Optional: snaps to items */
-  gap: 20px; /* Space between review items */
-  padding-bottom: 10px; /* Add some padding if scrollbar was visible or for bottom shadow */
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding-bottom: 10px;
 }
 
-/* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+/* Hide scrollbar for Webkit browsers */
 .reviewList::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
-
 
 .reviewItem {
   border: 1px solid #f0f0f0;
@@ -92,32 +87,25 @@
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  padding-right: 40px; /* Adjusted for image overflow */
-  padding-bottom: 120px; /* Adjusted for image overflow */
-
-  /* NEW: Ensure items don't shrink and have a defined width for scrolling */
-  flex-shrink: 0; /* Prevents items from shrinking */
-  width: calc(33.333% - 14px); /* Display approx 3 items + gap on larger screens */
-  /* Adjust width as needed for desired number of visible items per scroll */
-  /* For example: */
-  /* width: calc(50% - 10px); for 2 items */
-  /* width: calc(100% - 0px); for 1 item */
-  scroll-snap-align: start; /* Optional: aligns start of item to scroll container start */
+  padding-right: 40px;
+  padding-bottom: 120px;
+  flex-shrink: 0;
+  width: calc(33.333% - 14px); /* Approx. 3 items visible on large screens */
+  scroll-snap-align: start;
 }
 
-/* Responsive adjustments for reviewItem width */
+/* Responsive widths for review items */
 @media (max-width: 1200px) {
   .reviewItem {
-    width: calc(50% - 10px); /* Show 2 items on medium screens */
+    width: calc(50% - 10px);
   }
 }
 
 @media (max-width: 768px) {
   .reviewItem {
-    width: 100%; /* Show 1 item on small screens */
+    width: 100%;
   }
 }
-
 
 .reviewerInfo {
   display: flex;
@@ -152,25 +140,25 @@
 }
 
 .reviewStars {
-    color: #ffc107;
-    font-size: 0.9rem;
-    margin-top: 5px;
+  color: #ffc107;
+  font-size: 0.9rem;
+  margin-top: 5px;
 }
 
 .filledSmallStar {
-    color: #ffc107;
+  color: #ffc107;
 }
 
 .emptySmallStar {
-    color: #e0e0e0;
+  color: #e0e0e0;
 }
 
 .reviewContent {
-    display: flex;
-    flex-direction: column; /* To stack text and image within the content block */
-    gap: 15px;
-    align-items: flex-start;
-    margin-right: 20px; /* To make space for the overflowing image */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start;
+  margin-right: 20px;
 }
 
 .reviewText {
@@ -182,16 +170,15 @@
 }
 
 .reviewFoodImage {
-    width: 100px;
-    height: 100px;
-    background-color: #e0e0e0;
-    border-radius: 8px;
-    flex-shrink: 0;
-    object-fit: cover;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-
-    position: absolute;
-    right: -20px;
-    bottom: 20px;
-    z-index: 1;
+  width: 100px;
+  height: 100px;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  flex-shrink: 0;
+  object-fit: cover;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  position: absolute;
+  right: -20px;
+  bottom: 20px;
+  z-index: 1;
 }

@@ -1,34 +1,33 @@
-/* src/components/styles/ChartOrder.module.css */
 
 .chartOrderContainer {
   background-color: #fff;
   border-radius: 12px;
-  padding: 20px; /* Slightly reduced padding */
+  padding: 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
-  height: 380px; /* Set a consistent height matching PieChart */
-  overflow: hidden; /* Hide anything that overflows */
+  height: 380px; 
+  overflow: hidden;
 }
 
 .chartHeader {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 20px; /* Reduced margin */
-  padding-bottom: 10px; /* Reduced padding */
+  margin-bottom: 20px;
+  padding-bottom: 10px;
   border-bottom: 1px solid #eee;
 }
 
 .chartTitle {
-  font-size: 1.1rem; /* Slightly reduced font size */
+  font-size: 1.1rem;
   color: #333;
   font-weight: 600;
   margin: 0 0 5px 0;
 }
 
 .chartDescription {
-  font-size: 0.85rem; /* Slightly reduced font size */
+  font-size: 0.85rem;
   color: #777;
   margin: 0;
 }
@@ -38,13 +37,13 @@
   border: 1px solid #007bff;
   color: #007bff;
   border-radius: 8px;
-  padding: 8px 12px; /* Slightly reduced padding */
-  font-size: 0.85rem; /* Slightly reduced font size */
+  padding: 8px 12px;
+  font-size: 0.85rem;
   font-weight: 500;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 6px; /* Reduced gap */
+  gap: 6px;
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
@@ -54,18 +53,18 @@
 }
 
 .downloadIcon {
-  font-size: 1.1rem; /* Slightly reduced icon size */
+  font-size: 1.1rem;
 }
 
 .chartArea {
   position: relative;
   width: 100%;
-  flex-grow: 1; /* Allow chart area to take available height */
+  flex-grow: 1; 
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  padding-top: 15px; /* Reduced padding */
+  padding-top: 15px;
   overflow: hidden;
 }
 
@@ -74,16 +73,16 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: calc(100% - 25px); /* Adjusted height to leave space for labels below */
+  height: calc(100% - 25px); 
 }
 
 .chartLabels {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  font-size: 0.8rem; /* Reduced font size */
+  font-size: 0.8rem;
   color: #777;
-  margin-top: 8px; /* Reduced margin */
+  margin-top: 8px;
 }
 
 .chartLabels span {
@@ -91,12 +90,9 @@
   text-align: center;
 }
 
-/* Tooltip placeholder styling - adjust positioning if needed after scaling */
 .chartTooltip {
-  /* Keep existing styles, but visually verify positioning after scaling */
-  /* You might need to fine-tune `top` and `left` percentages relative to the new `chartSvg` height/width */
-  font-size: 0.8rem; /* Reduced font size */
-  padding: 6px 10px; /* Reduced padding */
+  font-size: 0.8rem;
+  padding: 6px 10px;
 }
 
 .tooltipValue {
@@ -105,6 +101,6 @@
 }
 
 .tooltipDate {
-  font-size: 0.7rem; /* Reduced font size */
+  font-size: 0.7rem;
   color: #bbb;
 }

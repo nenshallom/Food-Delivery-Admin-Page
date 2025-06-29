@@ -1,9 +1,7 @@
-/* src/components/styles/Header.module.css */
 
 .headerContainer {
   display: flex;
-  /* justify-content: space-between; This will change as welcomeMessage is removed */
-  justify-content: flex-start; /* Align items to the start, then use margin/gap */
+  justify-content: flex-start;
   align-items: center;
   padding: 20px 30px;
   background-color: #fff;
@@ -11,18 +9,10 @@
   border-radius: 12px;
   margin-bottom: 30px;
   flex-wrap: wrap;
-  gap: 30px; /* Increased gap to push search bar and right section apart */
+  gap: 30px;
 }
 
-/* REMOVED: Left Section: Welcome Message styles */
-/* .welcomeMessage h1 {
-  font-size: 1.2rem;
-  color: #333;
-  margin: 0;
-  font-weight: 600;
-} */
-
-/* Middle Section: Search Bar (now often the leftmost primary element) */
+/* Search Bar Section */
 .headerSearch {
   position: relative;
   display: flex;
@@ -31,9 +21,9 @@
   border-radius: 8px;
   padding: 8px 15px;
   border: 1px solid #eee;
-  flex-grow: 1; /* Allows search bar to take available space */
-  max-width: 400px; /* Adjusted max-width, adjust as per visual preference */
-  margin-right: auto; /* Pushes the search bar to the left if there's extra space */
+  flex-grow: 1;
+  max-width: 400px;
+  margin-right: auto;
 }
 
 .headerSearchInput {
@@ -57,18 +47,17 @@
   font-size: 1.1rem;
 }
 
-/* Right Section: Icons and User Info */
 .headerRightSection {
   display: flex;
   align-items: center;
-  gap: 20px; /* Space between icon stack and user info */
-  margin-left: auto; /* Pushes this section to the far right */
+  gap: 20px;
+  margin-left: auto;
 }
 
 .iconStack {
   display: flex;
-  flex-direction: row; /* Stack icons vertically */
-  gap: 20px; /* Space between stacked icons */
+  flex-direction: row;
+  gap: 20px;
 }
 
 .iconWrapper {
@@ -93,8 +82,15 @@
   color: #007bff;
 }
 
-/* Badges */
-.badgeNotification, .badgeChat, .badgeCart, .badgeSettings {
+.badgeNotification { background-color: #007bff; }
+.badgeChat { background-color: #00bcd4; }
+.badgeCart { background-color: #8bc34a; }
+.badgeSettings { background-color: #ff9800; }
+
+.badgeNotification,
+.badgeChat,
+.badgeCart,
+.badgeSettings {
   position: absolute;
   top: -5px;
   right: -5px;
@@ -110,18 +106,12 @@
   border: 2px solid #fff;
 }
 
-.badgeNotification { background-color: #007bff; }
-.badgeChat { background-color: #00bcd4; }
-.badgeCart { background-color: #8bc34a; }
-.badgeSettings { background-color: #ff9800; }
-
-/* User Info */
 .userInfo {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding-left: 20px; /* Add padding to the left for separation */
-  border-left: 1px solid #eee; /* Faint separator line */
+  padding-left: 20px;
+  border-left: 1px solid #eee;
 }
 
 .userName {
@@ -139,38 +129,34 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Basic responsiveness for header */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
   .headerContainer {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 15px 20px;
-      gap: 15px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+    gap: 15px;
   }
 
-  /* .welcomeMessage h1 {
-      font-size: 1rem;
-  } */ /* Removed with welcomeMessage */
-
   .headerSearch {
-      width: 100%;
-      max-width: unset;
-      margin-right: 0; /* Remove auto margin on smaller screens */
+    width: 100%;
+    max-width: unset;
+    margin-right: 0;
   }
 
   .headerRightSection {
-      width: 100%;
-      justify-content: space-between;
-      margin-left: 0; /* Remove auto margin on smaller screens */
+    width: 100%;
+    justify-content: space-between;
+    margin-left: 0;
   }
 
   .iconStack {
-      flex-direction: row;
-      gap: 15px;
+    flex-direction: row;
+    gap: 15px;
   }
 
   .userInfo {
-      padding-left: 0; /* Remove padding */
-      border-left: none; /* Remove border on small screens if desired */
+    padding-left: 0;
+    border-left: none;
   }
 }

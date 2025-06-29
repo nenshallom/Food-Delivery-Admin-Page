@@ -1,8 +1,7 @@
-// src/components/StatsCard/StatsCard.tsx
 import React from 'react';
-import styles from '../styles/StatsCard.module.css'; // Ensure this import is correct
+import styles from '../styles/StatsCard.module.css'; 
 import { MdOutlineTrendingUp, MdOutlineTrendingDown } from 'react-icons/md';
-import { FaClipboardList, FaBox, FaBan, FaDollarSign } from 'react-icons/fa'; // Icons for orders, delivered, canceled, revenue
+import { FaClipboardList, FaBox, FaBan, FaDollarSign } from 'react-icons/fa'; 
 
 interface StatsCardProps {
     title: string;

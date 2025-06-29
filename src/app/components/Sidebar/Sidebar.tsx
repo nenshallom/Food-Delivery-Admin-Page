@@ -1,10 +1,9 @@
-// src/components/Sidebar/Sidebar.tsx
-
-"use client"; // Add this line because we're using hooks like usePathname
+// we're using hooks like usePathname
+"use client"; 
 
 import React from 'react';
-import { usePathname } from 'next/navigation'; // Import usePathname
-import Image from 'next/image'; // Import Image for app icon and user avatar
+import { usePathname } from 'next/navigation'; 
+import Image from 'next/image'; 
 import styles from '../styles/Sidebar.module.css';
 import { RiDashboardLine, RiCustomerService2Line, RiWalletLine, RiCalendarLine, RiChat1Line } from 'react-icons/ri';
 import { MdOutlineFastfood, MdAnalytics, MdOutlineReviews, MdOutlineShoppingCart } from 'react-icons/md';
@@ -14,7 +13,7 @@ interface NavItem {
     id: number;
     name: string;
     path: string;
-    icon: React.ElementType; // Icon component type
+    icon: React.ElementType; 
 }
 
 // each element in the array must conform to the NavItem interface
@@ -34,11 +33,10 @@ const navItems: NavItem[] = [
 ];
 
 const Sidebar = () => {
-    const pathname = usePathname(); // Get current path
+    const pathname = usePathname(); 
 
     return (
         <div className={styles.sideBar}>
-            {/* logo/brand Section as per figma design */}
             <div className={styles.logoSection}>
                 <h1>Sedap.</h1>
                 <p className={styles.modernDashboard}>Modern Admin Dashboard</p>
@@ -52,7 +50,7 @@ const Sidebar = () => {
                     {/* Map through navItems to create navigation links */}
                     {navItems.map((item: NavItem) => (
                         <li key={item.id} className={`${styles.navItem} ${pathname === item.path ? styles.activeNavItem : ''}`}>
-                            <a href={item.path} className={styles.navLink}> {/* Changed to navLink for consistency with CSS */}
+                            <a href={item.path} className={styles.navLink}> 
                                 <item.icon className={styles.navIcon} />
                                 {item.name}
                             </a>
@@ -61,28 +59,6 @@ const Sidebar = () => {
                 </ul>
             </nav>
 
-            {/* Download App Section */}
-            <div className={styles.downloadAppSection}>
-                <p className={styles.downloadAppTitle}>Download Our App</p>
-                <div className={styles.downloadAppContent}>
-                    {/* Placeholder image for the app icon/design */}
-                    <Image
-                        src="/images/app-icon-placeholder.png" // Replace with your actual app icon path
-                        alt="Download App"
-                        width={60} // Adjust size as per your design
-                        height={60} // Adjust size as per your design
-                        className={styles.appImagePlaceholder}
-                    />
-                    {/* Placeholder button */}
-                    <button className={styles.downloadButton}>Download Now</button>
-                </div>
-            </div>
-
-            {/* REMOVED: Admin Info Section - not in target design */}
-            {/* <div className={styles.admininfoSection}>
-                <p>Sedap Restaurant Admin Dashboard</p>
-                <p>Welcome back.</p>
-            </div> */}
         </div>
     );
 };

@@ -1,4 +1,3 @@
-/* src/components/styles/TotalRevenueChart.module.css */
 
 .totalRevenueContainer {
   background-color: #fff;
@@ -28,7 +27,7 @@
 .chartControls {
   display: flex;
   align-items: center;
-  gap: 10px; /* Space between legend items */
+  gap: 10px; 
 }
 
 .legendDot {
@@ -40,21 +39,21 @@
 .legendText {
   font-size: 0.9rem;
   color: #555;
-  margin-right: 10px; /* Space after text before next dot */
+  margin-right: 10px; 
 }
 
 .chartBody {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center horizontally */
-  justify-content: center; /* Center vertically */
-  flex-grow: 1; /* Take available vertical space */
-  min-height: 250px; /* Minimum height for the chart area */
-  position: relative; /* For absolute positioning of labels if needed, or other chart elements */
+  align-items: center; 
+  justify-content: center; 
+  flex-grow: 1;
+  min-height: 250px; 
+  position: relative; 
 }
 
 .placeholderChartArea {
-  width: 95%; /* Wider to accommodate axis labels */
+  width: 95%; 
   height: 180px;
   background-color: #f0f0f0;
   border-radius: 8px;
@@ -70,8 +69,8 @@
 
 .xAxisLabels {
     display: flex;
-    justify-content: space-between; /* Distribute labels evenly */
-    width: 95%; /* Match placeholder width */
+    justify-content: space-between; 
+    width: 95%; 
     font-size: 0.8rem;
     color: #777;
     margin-top: 10px;
@@ -79,5 +78,5 @@
 
 .xAxisLabels span {
     text-align: center;
-    flex-grow: 1; /* Allow labels to take equal space */
+    flex-grow: 1; 
 }

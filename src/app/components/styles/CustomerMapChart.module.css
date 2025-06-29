@@ -1,4 +1,3 @@
-/* src/components/styles/CustomerMapChart.module.css */
 
 .customerMapContainer {
   background-color: #fff;
@@ -28,12 +27,12 @@
 .chartControls {
   display: flex;
   align-items: center;
-  gap: 15px; /* Space between dropdown and icon */
+  gap: 15px; 
 }
 
 .weeklyDropdown {
-  background-color: #f8f9fa; /* Light grey background */
-  border: 1px solid #dee2e6; /* Light border */
+  background-color: #f8f9fa; 
+  border: 1px solid #dee2e6;
   border-radius: 8px;
   padding: 8px 12px;
   font-size: 0.9rem;
@@ -86,8 +85,8 @@
 
 .xAxisLabels {
     display: flex;
-    justify-content: space-around; /* Distribute labels evenly with space around */
-    width: 90%; /* Match placeholder width */
+    justify-content: space-around; 
+    width: 90%; 
     font-size: 0.8rem;
     color: #777;
     margin-top: 10px;
@@ -95,5 +94,5 @@
 
 .xAxisLabels span {
     text-align: center;
-    flex-grow: 1; /* Allow labels to take equal space */
+    flex-grow: 1; 
 }

@@ -1,67 +1,61 @@
-/* src/components/styles/StatsCard.module.css */
 
 .statsCard {
   background-color: #fff;
   border-radius: 12px;
-  padding: 25px; /* Adjust padding to match the spacing in cc.png */
+  padding: 25px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  display: flex; /* Use flexbox to arrange icon and content horizontally */
-  align-items: center; /* Vertically center items */
-  gap: 20px; /* Space between the icon circle and the text content */
-  flex-grow: 1; /* Allows cards to grow and fill available space within the grid */
-  min-width: 0; /* Ensures content can shrink within flex/grid */
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-grow: 1;
+  min-width: 0;
 }
 
 .iconCircle {
-  width: 70px; /* Diameter of the circle */
+  width: 70px;
   height: 70px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Using a light green from cc.png. If other cards have different colors,
-     you'd add dynamic classes or inline styles in StatsCard.tsx */
   background-color: #eaf8e9;
-  flex-shrink: 0; /* Prevent it from shrinking */
+  flex-shrink: 0;
 }
 
-/* Ensure the icons inside the circles are correctly sized and colored */
-/* These styles are applied directly to the icon components */
-.iconOrders { color: #4CAF50; font-size: 2.5rem; } /* Green example, adjust to match cc.png */
-.iconDelivered { color: #2196F3; font-size: 2.5rem; } /* Blue example */
-.iconCanceled { color: #F44336; font-size: 2.5rem; } /* Red example */
-.iconRevenue { color: #FFC107; font-size: 2.5rem; } /* Amber example */
-
+.iconOrders { color: #4CAF50; font-size: 2.5rem; }
+.iconDelivered { color: #2196F3; font-size: 2.5rem; }
+.iconCanceled { color: #F44336; font-size: 2.5rem; }
+.iconRevenue { color: #FFC107; font-size: 2.5rem; }
 
 .cardContent {
   display: flex;
-  flex-direction: column; /* Stack value, title, and trend vertically */
-  align-items: flex-start; /* Align text to the left within its column */
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .cardValue {
-  font-size: 2.8rem; /* Large font size for the number */
-  font-weight: 700; /* Bold */
+  font-size: 2.8rem;
+  font-weight: 700;
   color: #333;
-  margin: 0; /* Remove default margins */
-  line-height: 1.1; /* Adjust line height for closer spacing */
+  margin: 0;
+  line-height: 1.1;
 }
 
 .cardTitle {
-  font-size: 1.1rem; /* Smaller font for the title */
+  font-size: 1.1rem;
   color: #666;
-  margin: 0; /* Remove default margins */
+  margin: 0;
   font-weight: 500;
-  white-space: nowrap; /* Keep title on a single line if possible */
+  white-space: nowrap;
 }
 
 .cardTrend {
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 0.9rem; /* Smaller font for the percentage */
+  font-size: 0.9rem;
   font-weight: 500;
-  margin-top: 5px; /* Space between title and trend line */
+  margin-top: 5px;
 }
 
 .trendIcon {
@@ -69,15 +63,14 @@
 }
 
 .trendUp {
-  color: #4CAF50; /* Green for up trend */
+  color: #4CAF50;
 }
 
 .trendDown {
-  color: #F44336; /* Red for down trend */
+  color: #F44336;
 }
 
-/* Specific styling for the '4% (30 days)' text itself */
 .cardTrend span {
-  color: #888; /* A more muted color for the percentage text */
+  color: #888;
   font-weight: 400;
 }

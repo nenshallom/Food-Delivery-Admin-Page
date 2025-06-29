@@ -1,4 +1,3 @@
-// src/components/TotalRevenueChart/TotalRevenueChart.tsx
 
 import React from 'react';
 import styles from '../styles/TotalRevenueChart.module.css';
@@ -16,7 +15,7 @@ const TotalRevenueChart: React.FC = () => {
         </div>
       </div>
       <div className={styles.chartBody}>
-        {/* Placeholder for the actual Total Revenue Chart (line chart) */}
+        {/* Placeholder for the actual Total Revenue Chart  */}
         <div className={styles.placeholderChartArea}></div>
         <p className={styles.placeholderText}>Line chart data will go here.</p>
         <div className={styles.xAxisLabels}>

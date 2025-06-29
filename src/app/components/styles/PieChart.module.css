@@ -1,27 +1,26 @@
-/* src/components/styles/PieChart.module.css */
 
 .pieChartContainer {
   background-color: #fff;
   border-radius: 12px;
-  padding: 20px; /* Slightly reduced padding */
+  padding: 20px; 
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
-  height: 380px; /* Set a consistent height for the container */
-  overflow: hidden; /* Hide anything that overflows */
+  height: 380px; 
+  overflow: hidden; 
 }
 
 .chartHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px; /* Reduced margin */
-  padding-bottom: 10px; /* Reduced padding */
+  margin-bottom: 20px; 
+  padding-bottom: 10px; 
   border-bottom: 1px solid #eee;
 }
 
 .chartTitle {
-  font-size: 1.1rem; /* Slightly reduced font size */
+  font-size: 1.1rem; 
   color: #333;
   font-weight: 600;
   margin: 0;
@@ -30,13 +29,12 @@
 .headerControls {
   display: flex;
   align-items: center;
-  gap: 10px; /* Reduced gap */
 }
 
 .checkboxLabel {
   display: flex;
   align-items: center;
-  font-size: 0.85rem; /* Slightly reduced font size */
+  font-size: 0.85rem; 
   color: #555;
   cursor: pointer;
 }
@@ -47,7 +45,7 @@
 }
 
 .moreOptionsIcon {
-  font-size: 1.3rem; /* Slightly reduced icon size */
+  font-size: 1.3rem; 
   color: #888;
   cursor: pointer;
 }
@@ -55,11 +53,11 @@
 .chartsWrapper {
   display: flex;
   justify-content: space-around;
-  align-items: center; /* Center charts vertically within the remaining space */
-  gap: 15px; /* Reduced gap */
+  align-items: center; 
+  gap: 15px; 
   flex-wrap: wrap;
-  flex-grow: 1; /* Allow wrapper to take available height */
-  overflow-y: auto; /* In case content overflows vertically */
+  flex-grow: 1; 
+  overflow-y: auto; 
 }
 
 .singleChart {
@@ -67,12 +65,12 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 5px; /* Reduced padding */
+  padding: 5px; 
 }
 
 .donutChart {
   position: relative;
-  width: 100px; /* Reduced diameter of the donut chart */
+  width: 100px; 
   height: 100px;
   border-radius: 50%;
   background-color: #f0f0f0;
@@ -80,14 +78,14 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  margin-bottom: 8px; /* Reduced margin */
+  margin-bottom: 8px; 
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
 }
 
 .donutChart::before {
   content: '';
   position: absolute;
-  width: 60px; /* Reduced inner circle diameter */
+  width: 60px; 
   height: 60px;
   background-color: #fff;
   border-radius: 50%;
@@ -97,19 +95,18 @@
 .percentage {
   position: relative;
   z-index: 3;
-  font-size: 1.6rem; /* Reduced font size */
+  font-size: 1.6rem;
   font-weight: 700;
   color: #333;
 }
 
 .chartLabel {
-  font-size: 0.9rem; /* Reduced font size */
+  font-size: 0.9rem;
   color: #555;
   margin-top: 5px;
   font-weight: 500;
 }
 
-/* CSS for creating the donut slices visually (placeholder effect) */
 .slice1, .slice2 {
   position: absolute;
   top: 0;
@@ -117,43 +114,37 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  clip: rect(0px, 50px, 100px, 0px); /* Adjust to create slices. This is simplified. */
-  background: red; /* Default for Total Order, will be overridden */
+  clip: rect(0px, 50px, 100px, 0px); 
+  background: red; 
 }
 
 .slice1 {
   transform: rotate(0deg);
-  background: #ff6384; /* Red for Total Order */
+  background: #ff6384; 
 }
 
 .slice2 {
-  transform: rotate(291.6deg); /* 81% of 360 degrees = 291.6 */
-  background: #e0e0e0; /* Remaining part of the slice */
-  z-index: 1; /* Below the inner circle */
+  transform: rotate(291.6deg); 
+  background: #e0e0e0; 
+  z-index: 1; 
 }
 
-/* Specific colors for Customer Growth (Green) */
 .greenSlice1 {
-  background: #28a745; /* Green for Customer Growth */
+  background: #28a745; 
   transform: rotate(0deg);
 }
 .greenSlice2 {
   background: #e0e0e0;
-  transform: rotate(79.2deg); /* 22% of 360 degrees = 79.2 */
+  transform: rotate(79.2deg); 
   z-index: 1;
 }
 
-/* Specific colors for Total Revenue (Blue) */
 .blueSlice1 {
-  background: #007bff; /* Blue for Total Revenue */
+  background: #007bff; 
   transform: rotate(0deg);
 }
 .blueSlice2 {
   background: #e0e0e0;
-  transform: rotate(223.2deg); /* 62% of 360 degrees = 223.2 */
+  transform: rotate(223.2deg); 
   z-index: 1;
 }
-
-/* NOTE: For actual donut charts with precise percentages,
- you would use a charting library like Recharts or Chart.js.
- These CSS slices are a simplified visual approximation. */

@@ -1,9 +1,8 @@
-// src/components/CustomerMapChart/CustomerMapChart.tsx
 
 import React from 'react';
 import styles from '../styles/CustomerMapChart.module.css';
-import { BsThreeDotsVertical } from 'react-icons/bs'; // Three dots icon
-import { MdKeyboardArrowDown } from 'react-icons/md'; // Dropdown arrow icon
+import { BsThreeDotsVertical } from 'react-icons/bs'; 
+import { MdKeyboardArrowDown } from 'react-icons/md'; 
 
 const CustomerMapChart: React.FC = () => {
   return (

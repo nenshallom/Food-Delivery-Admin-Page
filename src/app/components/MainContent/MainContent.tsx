@@ -10,8 +10,6 @@ interface MainContentProps {
 const MainContent: React.FC<MainContentProps> = ({ children }) => {
     return (
         <div className={styles.mainContent}>
-            {/* render hwady component */}
-            <Header />
 
             <div className={styles.dashboardBody}>
                 {/* admin dashboard heading */}

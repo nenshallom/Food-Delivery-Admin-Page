@@ -1,7 +1,6 @@
-// src/components/PieChart/PieChart.tsx
 import React from 'react';
-import styles from '../styles/PieChart.module.css'; // Import styles for the PieChart
-import { MdMoreVert } from 'react-icons/md'; // For the three-dot menu icon
+import styles from '../styles/PieChart.module.css'; 
+import { MdMoreVert } from 'react-icons/md'; 
 
 const PieChart: React.FC = () => {
   return (

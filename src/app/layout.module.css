@@ -1,35 +1,31 @@
-/* src/app/layout.module.css */
-
 .dashboardLayoutWrapper {
     display: flex;
     min-height: 100vh;
-    width: 100%; /* Ensure it takes full width */
+    width: 100%;
 }
 
 .mainContentArea {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    overflow-x: hidden; /* Prevent horizontal scroll from content overflow */
+    overflow-x: hidden; 
 }
 
-/* --- Media Queries for Layout --- */
+/* --- Responsive Layout Adjustments --- */
 
-/* Tablets (landscape) / Smaller Laptops */
+/* Tablets & smaller laptops (≤ 992px) */
 @media (max-width: 992px) {
-    /* Adjust sidebar width or hide it more aggressively if needed */
-    /* For simplicity, let's keep sidebar fixed for now and let content adapt */
+    /* No changes for sidebar in this range - content adapts naturally */
 }
 
-/* Tablets (portrait) / Large Phones */
+/* Large phones & tablets portrait (≤ 768px) */
 @media (max-width: 768px) {
     .dashboardLayoutWrapper {
         flex-direction: column; /* Stack sidebar and main content vertically */
     }
 
-    /* Hide the sidebar completely on smaller screens */
-    .dashboardLayoutWrapper > :first-child { /* Targets the Sidebar component */
-        display: none;
+    .dashboardLayoutWrapper > :first-child {
+        display: none; /* Hide sidebar on smaller screens */
     }
 
     .mainContentArea {
@@ -37,7 +33,7 @@
     }
 }
 
-/* Small Phones */
+/* Small phones (≤ 576px) */
 @media (max-width: 576px) {
-    /* Further adjustments for extremely small screens if necessary */
+    /* Add specific adjustments for very small screens if needed */
 }

@@ -1,33 +1,28 @@
-/* src/app/globals.css */
 
-/* Basic Reset */
 * {
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  box-sizing: border-box; 
   margin: 0;
   padding: 0;
 }
 
 html, body {
-  font-family: sans-serif; /* Fallback font */
+  font-family: sans-serif;
   line-height: 1.6;
   color: #333;
-  /* Crucial for preventing horizontal scrolling */
   overflow-x: hidden;
-  height: 100%; /* Ensure body takes full height of the viewport */
+  height: 100%; 
 }
 
-/* Optional: Improve link readability */
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-/* Optional: Remove list styles */
 ul {
   list-style: none;
 }
 
-/* Optional: Basic button styling */
 button {
   border: none;
   background: none;

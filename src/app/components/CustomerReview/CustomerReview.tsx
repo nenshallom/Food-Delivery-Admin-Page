@@ -1,4 +1,3 @@
-// src/components/CustomerReview/CustomerReview.tsx
 
 "use client";
 
@@ -7,8 +6,7 @@ import Image from 'next/image';
 import styles from '../styles/CustomerReview.module.css';
 import { FaStar } from 'react-icons/fa';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
-// Import reviewsData from the new file
-import { reviewsData } from '../../data/reviewsData'; // Adjust path if your structure differs
+import { reviewsData } from '../../data/reviewsData'; 
 
 
 const CustomerReview: React.FC = () => {
@@ -54,7 +52,7 @@ const CustomerReview: React.FC = () => {
       </div>
 
       <div className={styles.reviewList} ref={reviewListRef}>
-        {reviewsData.map((review) => ( // Data now comes from the imported reviewsData
+        {reviewsData.map((review) => ( 
           <div key={review.id} className={styles.reviewItem}>
             <div className={styles.reviewerInfo}>
               <Image
