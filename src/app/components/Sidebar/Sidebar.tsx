@@ -3,11 +3,9 @@
 
 import React from 'react';
 import { usePathname } from 'next/navigation'; 
-import Image from 'next/image'; 
 import styles from '../styles/Sidebar.module.css';
 import { RiDashboardLine, RiCustomerService2Line, RiWalletLine, RiCalendarLine, RiChat1Line } from 'react-icons/ri';
 import { MdOutlineFastfood, MdAnalytics, MdOutlineReviews, MdOutlineShoppingCart } from 'react-icons/md';
-import { FiSearch } from 'react-icons/fi'; // Import search icon
 
 interface NavItem {
     id: number;
