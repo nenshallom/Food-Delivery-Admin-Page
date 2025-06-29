@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "../styles/MainContent.module.css";
-import Header from "../Header/Header";
 
 interface MainContentProps {
     // children can take any value that jsx can render

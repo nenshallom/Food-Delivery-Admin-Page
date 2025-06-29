@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { FiSearch } from 'react-icons/fi';
-import { RiNotification3Line, RiChat1Line, RiGiftLine } from 'react-icons/ri';
+import { RiNotification3Line, RiChat1Line } from 'react-icons/ri';
 import { IoSettingsOutline } from 'react-icons/io5';
 import { MdOutlineShoppingCart } from 'react-icons/md';
 
